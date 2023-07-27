@@ -1,0 +1,3 @@
+[submodule "Haki/libraries/spdlog"]
+	path = Haki/libraries/spdlog
+	url = https://github.com/gabime/spdlog.git

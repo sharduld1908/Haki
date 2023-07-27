@@ -1,5 +1,7 @@
 #include "Application.h"
+
 namespace Haki {
+
 	Application::Application() {
 
 	}
