@@ -4,12 +4,16 @@
 
 namespace Haki {
 
-	Application::Application() {}
+	Application::Application() {
+		window = std::unique_ptr<Window>(Window::Create());
+	}
 
 	Application::~Application() {}
 
 	void Application::run() {
-		while (true);
+		while (true) {
+			window->OnUpdate();
+		}
 	}
 
 }
