@@ -29,6 +29,7 @@ project "Haki"
 	files
 	{
 		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.hpp",
 		"%{prj.name}/src/**.cpp"
 	}
 

@@ -9,5 +9,5 @@
 #include "Haki/Logger.h"
 
 // ------Entry Point-----------------
-#include "Haki/EntryPoint.h"
+#include "Haki/EntryPoint.hpp"
 
