@@ -10,6 +10,10 @@ workspace "Haki"
 	}
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+IncludeDirs = {} 
+IncludeDirs["GLFW"] = "Haki/libraries/GLFW/include"
+
+include "Haki/libraries/GLFW"
 
 project "Haki"
 	location "Haki"
@@ -19,6 +23,9 @@ project "Haki"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "hkpch.h"
+	pchsource "Haki/src/hkpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -27,13 +34,21 @@ project "Haki"
 
 	includedirs 
 	{
-		"%{prj.name}/libraries/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/libraries/spdlog/include",
+		"%{IncludeDirs.GLFW}"
+	}
+
+	links 
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.22000.0"
+		systemversion "latest"
 
 		defines 
 		{
@@ -87,7 +102,7 @@ project "Sandbox"
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.22000.0"
+		systemversion "latest"
 
 		defines 
 		{

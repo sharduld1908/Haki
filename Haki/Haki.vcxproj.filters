@@ -19,6 +19,7 @@
     <ClInclude Include="src\Haki\Logger.h">
       <Filter>Haki</Filter>
     </ClInclude>
+    <ClInclude Include="src\hkpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Haki\Application.cpp">
@@ -27,5 +28,6 @@
     <ClCompile Include="src\Haki\Logger.cpp">
       <Filter>Haki</Filter>
     </ClCompile>
+    <ClCompile Include="src\hkpch.cpp" />
   </ItemGroup>
 </Project>

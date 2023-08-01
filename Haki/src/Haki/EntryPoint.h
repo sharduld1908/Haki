@@ -5,7 +5,7 @@
 extern Haki::Application* Haki::CreateApplication();
 
 int main(int argc, char** argv) {
-
+	 
 	Haki::Logger::Init();
 	HK_CORE_WARN("Hello World!!!");
 	HK_CLIENT_INFO("I am fine!!");

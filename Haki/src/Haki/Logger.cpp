@@ -1,3 +1,5 @@
+
+#include "hkpch.h"
 #include "Logger.h"
 
 namespace Haki {
