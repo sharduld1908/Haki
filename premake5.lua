@@ -5,13 +5,12 @@ workspace "Haki"
 	configurations
 	{
 		"Debug",
-		"Release",
-		"Dist"
+		"Release"
 	}
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDirs = {} 
-IncludeDirs["GLFW"] = "Haki/libraries/GLFW/include"
+IncludeDirs["GLFW"] = "Haki/libraries/GLFW"
 
 include "Haki/libraries/GLFW"
 
@@ -37,7 +36,7 @@ project "Haki"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/libraries/spdlog/include",
-		"%{IncludeDirs.GLFW}"
+		"%{IncludeDirs.GLFW}/include"
 	}
 
 	links 
@@ -65,14 +64,14 @@ project "Haki"
 	filter "configurations:Debug"
 		defines "HK_DEBUG"
 		symbols "On"
+		staticruntime "off"
+		runtime "Debug"
 
-	filter "configurations:Debug"
+	filter "configurations:Release"
 		defines "HK_RELEASE"
 		optimize "On"
-
-	filter "configurations:Dist"
-		defines "HK_DIST"
-		optimize "On"
+		staticruntime "off"
+		runtime "Release"
 
 
 project "Sandbox"
@@ -114,10 +113,6 @@ project "Sandbox"
 		defines "HK_DEBUG"
 		symbols "On"
 
-	filter "configurations:Debug"
+	filter "configurations:Release"
 		defines "HK_RELEASE"
-		optimize "On"
-
-	filter "configurations:Dist"
-		defines "HK_DIST"
 		optimize "On"

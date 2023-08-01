@@ -56,11 +56,7 @@ namespace Haki {
 
 	void WindowsWindow::SetVSync(bool enabled)
 	{
-		if (enabled)
-			glfwSwapInterval(1);
-		else
-			glfwSwapInterval(0);
-
+		glfwSwapInterval(enabled);
 		m_Data.VSync = enabled;
 	}
 

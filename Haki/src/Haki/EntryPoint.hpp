@@ -12,8 +12,6 @@ int main(int argc, char** argv) {
 	HK_CLIENT_INFO("Starting Client!!");
 
 	app->run();
-	HK_CORE_WARN("Starting Core!!");
-
 	delete app;
 }
 
